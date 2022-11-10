@@ -25,7 +25,8 @@ public class AccountMapper implements IMapper<AccountEntity, AccountDTO> {
         AccountDTO accountDTO = new AccountDTO();
         accountDTO.setUsername(entity.getUsername());
         accountDTO.setRole(entity.getRole());
-        accountDTO.setPasswd(entity.getPasswd());
+//        accountDTO.setPasswd(entity.getPassword());
+        accountDTO.setPasswd("encrypted");
         return accountDTO;
     }
 

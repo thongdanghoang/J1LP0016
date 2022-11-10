@@ -18,7 +18,7 @@ public class LoginService {
     public AccountDTO login(String username, String passwd) throws Exception {
         try {
             AccountEntity found = repository.findById(username);
-            if (!BCrypt.checkpw(passwd, found.getPasswd())) {
+            if (!BCrypt.checkpw(passwd, found.getPassword())) {
                 throw new Exception(username + "'s password is incorrect.");
             }
             return mapper.toDTO(found);

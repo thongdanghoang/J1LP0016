@@ -35,4 +35,12 @@ public class DealerService {
     public List<DealerDTO> findAll() throws Exception {
         return mapping.toDTOs(repository.findAll());
     }
+
+    public static void main(String[] args) {
+        try {
+            new DealerService().findAll().forEach(System.out::println);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

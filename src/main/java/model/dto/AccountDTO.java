@@ -8,7 +8,7 @@ import model.entity.AccountEntity;
 import java.io.Serializable;
 
 /**
- * A DTO for the {@link AccountEntity} entity
+ * A DTO for the {@link AccountEntity} model.entity
  *
  * @author thongdanghoang
  */

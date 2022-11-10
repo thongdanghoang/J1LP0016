@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 
 /**
- * A DTO for the {@link model.entity.DealerEntity} entity
+ * A DTO for the {@link model.entity.DealerEntity} model.entity
  *
  * @author thongdanghoang
  */

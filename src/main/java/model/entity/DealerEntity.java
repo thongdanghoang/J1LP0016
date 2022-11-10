@@ -1,38 +1,76 @@
 package model.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.*;
+import jakarta.persistence.*;
 
-/**
- * @author thongdanghoang
- */
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
-@ToString(onlyExplicitlyIncluded = true)
 @Entity
-@Table(name = "dealer", schema = "dbo", catalog = "J1LP0016")
+@Table(name = "dealer", schema = "ThCLKAjtjI", catalog = "")
 public class DealerEntity {
-    @ToString.Include
     @Id
-    @Column(name = "dealer_id", nullable = false, length = 4)
+    @Column(name = "dealer_id", nullable = false, length = 64)
     private String id;
-    @ToString.Include
-    @Column(name = "dealer_name", nullable = false, length = 70)
+    @Basic
+    @Column(name = "dealer_name", nullable = false, length = 64)
     private String name;
-    @ToString.Include
-    @Column(name = "dealer_address", nullable = false)
+    @Basic
+    @Column(name = "dealer_address", nullable = false, length = 64)
     private String address;
-    @ToString.Include
-    @Column(name = "dealer_phone", nullable = false, length = 15)
+    @Basic
+    @Column(name = "dealer_phone", nullable = false, length = 64)
     private String phone;
-    @ToString.Include
+    @Basic
     @Column(name = "dealer_continuing", nullable = false)
     private boolean continuing;
+
+    public DealerEntity() {
+    }
+
+    public DealerEntity(String id, String name, String address, String phone, boolean continuing) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+        this.continuing = continuing;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public boolean isContinuing() {
+        return continuing;
+    }
+
+    public void setContinuing(boolean consinuing) {
+        this.continuing = consinuing;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -59,5 +97,4 @@ public class DealerEntity {
         result = 31 * result + (continuing ? 1 : 0);
         return result;
     }
-
 }
