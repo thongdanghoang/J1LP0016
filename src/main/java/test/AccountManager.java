@@ -37,7 +37,7 @@ public class AccountManager {
         System.out.println("create - insert new account to system.");
         System.out.println("read - print all accounts' information.");
         System.out.println("update - edit an account through that id.");
-        System.out.println("delete - destroy an account base on .");
+        System.out.println("delete - destroy an account base on id.");
         System.out.println("exit - log out account manager.");
     }
 }
